@@ -14,11 +14,11 @@ console.log("Available chains:", { Mumbai, Polygon, Sepolia, Base });
 
 // Define Monad Testnet as a custom chain
 export const chainConst = {
-  chainId: 131402, // Monad Testnet chain ID
-  rpc: ["https://rpc.testnet.monad.xyz/"],
+    chainId: 10143, // Monad Testnet chain ID
+    rpc: ["https://testnet-rpc.monad.xyz/"],
   nativeCurrency: {
-    name: "Monad",
-    symbol: "MONAD",
+      name: "Monad Testnet",
+    symbol: "MON",
     decimals: 18,
   },
   shortName: "monad-testnet",
@@ -29,16 +29,13 @@ export const chainConst = {
   explorers: [
     {
       name: "Monad Explorer",
-      url: "https://explorer.testnet.monad.xyz/",
+          url: "https://testnet.monadexplorer.com/",
     },
   ],
 };
 
-// It is IMPORTANT to provide your own API key to use the thirdweb SDK and infrastructure.
-// Please ensure that you define the correct domain for your API key from the API settings page.
-// You can get one for free at https://thirdweb.com/create-api-key
-// Learn more here: https://blog.thirdweb.com/changelog/api-keys-to-access-thirdweb-infra
-export const clientIdConst = import.meta.env.VITE_TEMPLATE_CLIENT_ID || "";
+// Instead of using environment variables
+export const clientIdConst = "bfe31aa9bb0330a2a8eac344eb119164";
 
 // Configure the primary color for buttons and other UI elements
 export const primaryColorConst = "blue";

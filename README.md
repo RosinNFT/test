@@ -73,6 +73,12 @@ If you want to sponsor the gas fees for your user, you can update the `relayerUr
 
 Learn more: https://portal.thirdweb.com/glossary/gasless-transactions
 
+## Configuration
+
+This project comes with a pre-configured Thirdweb client ID, so you can clone and run it without additional setup.
+
+If you want to use your own client ID, update the `clientIdConst` in `src/consts/parameters.ts`.
+
 ## Deploying Your Site
 
 ### Deploying to IPFS
