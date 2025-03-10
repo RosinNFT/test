@@ -16,7 +16,6 @@ import {
 import { BigNumber, utils } from "ethers";
 import { useMemo, useState } from "react";
 import { HeadingImage } from "./components/HeadingImage";
-import { PoweredBy } from "./components/PoweredBy";
 import { useToast } from "./components/ui/use-toast";
 import { parseIneligibility } from "./utils/parseIneligibility";
 import {
@@ -42,6 +41,11 @@ const colors = {
   cyan: "#22D3EE",
   yellow: "#FBBF24",
 } as const;
+
+const appStyles = {
+  position: 'relative' as 'relative',
+  overflow: 'hidden'
+};
 
 export default function Home() {
   const contractQuery = useContract(contractAddress);
@@ -301,7 +305,7 @@ export default function Home() {
   }
 
   return (
-    <div className="w-screen min-h-screen">
+    <div style={appStyles}>
       <ConnectWallet className="!absolute !right-4 !top-4" theme={theme} />
       <div className="grid h-screen grid-cols-1 lg:grid-cols-12">
         <div className="items-center justify-center hidden w-full h-full lg:col-span-5 lg:flex lg:px-12">
@@ -490,7 +494,15 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <PoweredBy />
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          body > div:not(#root) svg,
+          #root ~ div svg,
+          div[style*="fixed"] svg {
+            display: none !important;
+          }
+        `
+      }} />
     </div>
   );
 }

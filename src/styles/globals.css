@@ -125,3 +125,69 @@ body {
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+
+/* More aggressive targeting for thirdweb branding */
+[class*="thirdweb"],
+[class*="poweredBy"],
+[data-tw-powered-by],
+a[href*="thirdweb"],
+a svg[viewBox="0 0 26 13"],
+div:has(> a[href*="thirdweb.com"]),
+div:has(> svg[viewBox="0 0 26 13"]) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Target based on position (bottom left/right corner elements) */
+body > div:last-child:not(#root) {
+  display: none !important;
+}
+
+/* Add Foggy logo to the top center of the page */
+body::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  background-image: url('https://foggynft.xyz/img/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 100;
+}
+
+/* More specific selectors for the Connect Wallet button text */
+[data-tw-component="ConnectWallet"] button,
+.tw-connect-wallet button,
+button[data-theme="dark"],
+button[data-theme="light"] {
+  background-color: #8B0000 !important; /* Dark blood red */
+  border-color: #8B0000 !important;
+  color: white !important;
+}
+
+/* Target nested elements that might contain the text */
+[data-tw-component="ConnectWallet"] button *,
+.tw-connect-wallet button *,
+button[data-theme="dark"] *,
+button[data-theme="light"] * {
+  color: white !important;
+}
+
+/* Hover state */
+[data-tw-component="ConnectWallet"] button:hover,
+.tw-connect-wallet button:hover,
+button[data-theme="dark"]:hover,
+button[data-theme="light"]:hover {
+  background-color: #650000 !important; /* Slightly darker on hover */
+  border-color: #650000 !important;
+}

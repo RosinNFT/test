@@ -38,7 +38,7 @@ export const chainConst = {
 export const clientIdConst = "bfe31aa9bb0330a2a8eac344eb119164";
 
 // Configure the primary color for buttons and other UI elements
-export const primaryColorConst = "blue";
+export const primaryColorConst = "#8B0000"; // Dark blood red color
 
 // Choose between "light" and "dark" mode
 export const themeConst = "dark";
